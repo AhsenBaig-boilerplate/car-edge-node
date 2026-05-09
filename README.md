@@ -45,10 +45,16 @@ See [docs/restore-flow.md](docs/restore-flow.md) for complete instructions.
 
 ## Documentation
 
-- **[Architecture](docs/architecture.md)** - System design and layers
+### Getting Started
+- **[OS Installation Guide](docs/os-installation.md)** - ⭐ **START HERE** - Complete installation walkthrough with partitioning
 - **[Bootstrap Flow](docs/bootstrap-flow.md)** - How automatic setup works
-- **[Restore Flow](docs/restore-flow.md)** - Online and offline restore procedures
-- **[Disaster Recovery](docs/disaster-recovery.md)** - Troubleshooting and recovery scenarios
-- **[Car Power Notes](docs/car-power-notes.md)** - Power management considerations
+- **[Architecture](docs/architecture.md)** - System design and layers
+
+### Configuration & Storage
 - **[Storage Layout](config/storage-layout.md)** - Data organization on persistent storage
 - **[Partition Layout](os/partition-layout.md)** - Disk partitioning strategy
+- **[Car Power Notes](docs/car-power-notes.md)** - Power management considerations
+
+### Recovery & Troubleshooting
+- **[Restore Flow](docs/restore-flow.md)** - Online and offline restore procedures
+- **[Disaster Recovery](docs/disaster-recovery.md)** - Troubleshooting and recovery scenarios

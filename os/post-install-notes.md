@@ -1,5 +1,24 @@
 # Post-Install Notes
 
+> **Note:** For complete installation instructions including partitioning, see [docs/os-installation.md](../docs/os-installation.md)
+
+This document covers additional configuration and troubleshooting after the bootstrap system is installed.
+
+---
+
+## Quick Setup (After OS Installation)
+
+If you've already installed ChimeraOS and created the storage partition, run:
+
+```bash
+curl -s https://raw.githubusercontent.com/ahsenbaig-boilerplate/car-edge-node/main/scripts/install-bootstrap.sh | sudo bash
+sudo reboot
+```
+
+See [OS Installation Guide](../docs/os-installation.md) for complete step-by-step instructions.
+
+---
+
 ## After ChimeraOS Install
 
 ### 1. Boot into Desktop Mode
