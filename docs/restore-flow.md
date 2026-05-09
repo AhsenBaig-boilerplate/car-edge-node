@@ -30,7 +30,51 @@ Because the storage partition (`/mnt/storage`) is separate from the OS:
 
 ---
 
-## Method 1: Online Restore (Internet Available)
+## Restore Methods
+
+Choose the method that fits your situation:
+
+| Method | Internet? | USB? | Commands | Best For |
+|--------|-----------|------|----------|----------|
+| **Automated USB** | No | Yes | 2 | Easiest, no typing |
+| **Online** | Yes | No | 1 | Quick with internet |
+| **Offline** | No | No | 1 | Repeat restores |
+
+---
+
+## Method 1: Automated USB (Easiest)
+
+**Requirements:**
+- Pre-prepared USB with ChimeraOS + bootstrap (see [automated-usb-installation.md](automated-usb-installation.md))
+
+**Steps:**
+
+1. **Reinstall ChimeraOS from USB** (OS partition only)
+   - Boot from prepared USB
+   - Install on OS partition only
+   - ⚠️ **DO NOT select storage partition**
+
+2. **Boot into fresh OS**
+
+3. **Mount USB data partition:**
+   ```bash
+   sudo mkdir -p /mnt/usb
+   sudo mount /dev/sdb3 /mnt/usb  # Or: sudo mount LABEL=CARNODE /mnt/usb
+   ```
+
+4. **Run installer from USB:**
+   ```bash
+   sudo bash /mnt/usb/INSTALL.sh
+   sudo reboot
+   ```
+
+5. **Done!** Bootstrap auto-configures everything.
+
+See [automated-usb-installation.md](automated-usb-installation.md) for USB preparation.
+
+---
+
+## Method 2: Online Restore (Internet Available)
 
 1. **Reinstall ChimeraOS on OS partition ONLY**
    - Select the OS partition (`/dev/sda2` or `/dev/nvme0n1p2`)
@@ -45,7 +89,7 @@ Because the storage partition (`/mnt/storage`) is separate from the OS:
    sudo reboot
    ```
 
-## Method 2: Offline Restore (No Internet Required)
+## Method 3: Offline Restore (No Internet Required)
 
 1. **Reinstall ChimeraOS on OS partition ONLY**
    - Select the OS partition (`/dev/sda2` or `/dev/nvme0n1p2`)
@@ -67,7 +111,7 @@ Because the storage partition (`/mnt/storage`) is separate from the OS:
    sudo reboot
    ```
 
-## Post-Restore (Both Methods)
+## Post-Restore (All Methods)
 
 1. After reboot:
    - Bootstrap service auto-runs

@@ -2,6 +2,42 @@
 
 Complete guide for installing ChimeraOS with proper partition layout for the car-edge-node.
 
+> **💡 TIP:** For easier installation with zero typing, see [Automated USB Installation](automated-usb-installation.md)
+
+---
+
+## Installation Methods
+
+### Method 1: Automated USB (Recommended for Most Users)
+
+**Easiest method - no typing commands, everything on one USB.**
+
+- ✅ No internet needed during install
+- ✅ No typing GitHub URLs  
+- ✅ Single USB contains everything
+- ✅ Offline documentation included
+
+**See:** [automated-usb-installation.md](automated-usb-installation.md)
+
+**Quick summary:**
+1. Prepare USB once: `bash scripts/prepare-usb.sh`
+2. Boot from USB → Install ChimeraOS
+3. Mount USB → Run `sudo bash /mnt/usb/INSTALL.sh`
+4. Reboot → Done!
+
+---
+
+### Method 2: Manual Installation (This Guide)
+
+**For users who prefer manual control or don't have a prep machine.**
+
+- Requires typing commands
+- Requires internet OR offline repo
+- More control over process
+- Follows traditional Linux installation pattern
+
+**Continue reading below for step-by-step manual installation.**
+
 ---
 
 ## Prerequisites

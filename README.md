@@ -28,6 +28,18 @@ See `docs/architecture.md` and `docs/bootstrap-flow.md` for details.
 
 ## Quick Restore
 
+**Automated USB (No typing required):**
+```bash
+# Prepare USB once on dev machine:
+bash scripts/prepare-usb.sh
+
+# On car mini PC after OS install:
+sudo mount /dev/sdb3 /mnt/usb
+sudo bash /mnt/usb/INSTALL.sh
+sudo reboot
+```
+See [automated-usb-installation.md](docs/automated-usb-installation.md)
+
 **Online (with internet):**
 ```bash
 curl -s https://raw.githubusercontent.com/ahsenbaig-boilerplate/car-edge-node/main/scripts/install-bootstrap.sh | sudo bash
@@ -46,7 +58,8 @@ See [docs/restore-flow.md](docs/restore-flow.md) for complete instructions.
 ## Documentation
 
 ### Getting Started
-- **[OS Installation Guide](docs/os-installation.md)** - ⭐ **START HERE** - Complete installation walkthrough with partitioning
+- **[Automated USB Installation](docs/automated-usb-installation.md)** - 🚀 **EASIEST** - Zero typing, single USB
+- **[OS Installation Guide](docs/os-installation.md)** - Complete manual installation walkthrough
 - **[Bootstrap Flow](docs/bootstrap-flow.md)** - How automatic setup works
 - **[Architecture](docs/architecture.md)** - System design and layers
 
