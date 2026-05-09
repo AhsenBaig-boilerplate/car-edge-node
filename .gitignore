@@ -5,6 +5,9 @@
 !.vscode/settings.json
 !.vscode/tasks.json
 
+# Reference docs (local only)
+OriginalSpecs.md
+
 # Devcontainer
 .devcontainer/.env
 
