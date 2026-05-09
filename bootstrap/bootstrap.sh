@@ -66,6 +66,33 @@ mkdir -p "$STORAGE_PATH/config"/{syncthing,wireguard,flatpak,steam}
 log "Directory structure created"
 
 # ============================================================================
+# 2.5. Sync Repository to Storage for Offline Restore
+# ============================================================================
+
+log "Syncing car-edge-node repository to storage for offline restore..."
+
+REPO_STORAGE_PATH="$STORAGE_PATH/car-edge-node-repo"
+REPO_URL="https://github.com/ahsenbaig-boilerplate/car-edge-node.git"
+
+if [ -d "$REPO_STORAGE_PATH/.git" ]; then
+    log "Repository exists, pulling latest changes..."
+    cd "$REPO_STORAGE_PATH"
+    if git pull origin main &>/dev/null; then
+        log "Repository updated successfully"
+    else
+        log "Warning: Could not update repository (offline or no changes)"
+    fi
+    cd - &>/dev/null
+else
+    log "Cloning repository for offline restore..."
+    if git clone "$REPO_URL" "$REPO_STORAGE_PATH" &>/dev/null; then
+        log "Repository cloned successfully"
+    else
+        log "Warning: Could not clone repository (offline?). Will retry on next boot."
+    fi
+fi
+
+# ============================================================================
 # 3. Install/Update Flatpaks
 # ============================================================================
 

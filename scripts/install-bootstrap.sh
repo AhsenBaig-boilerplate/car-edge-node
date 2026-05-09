@@ -28,10 +28,19 @@ BOOTSTRAP_DIR="$INSTALL_DIR/bootstrap"
 CONFIG_DIR="$INSTALL_DIR/config"
 SCRIPTS_DIR="$INSTALL_DIR/scripts"
 FIRST_BOOT_FLAG="/etc/car-edge-first-boot"
+STORAGE_PATH="/mnt/storage"
 
 # Get the directory where this script is located
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(dirname "$SCRIPT_DIR")"
+
+# Check if running from offline storage repo
+if [[ "$REPO_ROOT" == "$STORAGE_PATH/car-edge-node-repo" ]]; then
+    echo -e "${GREEN}Running from offline storage repository${NC}"
+    OFFLINE_MODE=true
+else
+    OFFLINE_MODE=false
+fi
 
 echo "Installing from: $REPO_ROOT"
 echo "Installing to: $INSTALL_DIR"

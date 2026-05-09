@@ -30,9 +30,11 @@ The `/mnt/storage` partition contains all stateful data that persists across OS 
 │   ├── wireguard/          # WireGuard config backup
 │   ├── flatpak/            # Flatpak overrides backup
 │   └── steam/              # Steam config backup
-└── backups/                 # Miscellaneous backups
-    ├── screenshots/
-    └── saves/
+├── backups/                 # Miscellaneous backups
+│   ├── screenshots/
+│   └── saves/
+└── car-edge-node-repo/      # Offline copy of bootstrap repo
+    └── (git repository)     # For offline OS restore
 ```
 
 ## Ownership and Permissions
@@ -46,6 +48,16 @@ The `/mnt/storage` partition contains all stateful data that persists across OS 
 - **Minimum:** 100GB
 - **Recommended:** 500GB - 1TB
 - **Media-heavy:** 2TB+
+
+## Offline Repository
+
+The `/mnt/storage/car-edge-node-repo/` directory contains an offline copy of this repository. This enables:
+
+- **Offline restore:** Reinstall OS without internet
+- **Version control:** Track what configuration is deployed
+- **Quick updates:** Pull latest changes and reinstall
+
+The bootstrap script automatically maintains this copy.
 
 ## Sync Strategy
 
