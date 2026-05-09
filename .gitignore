@@ -1,0 +1,19 @@
+# OS / editor
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+
+# Devcontainer
+.devcontainer/.env
+
+# Logs
+*.log
+
+# Syncthing
+config/syncthing/config.xml
+config/syncthing/*.db
+
+# WireGuard secrets
+config/wireguard/wg0.conf

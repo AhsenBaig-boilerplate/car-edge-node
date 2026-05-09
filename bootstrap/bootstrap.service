@@ -1,0 +1,15 @@
+[Unit]
+Description=Car Edge Node Bootstrap Service
+After=local-fs.target network.target
+Before=display-manager.service
+
+[Service]
+Type=oneshot
+ExecStart=/opt/car-edge-node/bootstrap/bootstrap.sh
+User=gamer
+StandardOutput=journal
+StandardError=journal
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

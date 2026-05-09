@@ -1,0 +1,9 @@
+{
+    "editor.formatOnSave": true,
+    "files.eol": "\n",
+    "github.copilot.enable": {
+        "*": true
+    },
+    "github.copilot.chat.enable": true,
+    "terminal.integrated.defaultProfile.linux": "bash"
+}

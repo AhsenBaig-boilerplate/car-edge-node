@@ -1,0 +1,15 @@
+# Flatpak Applications
+# One app ID per line
+# Comments start with #
+
+# Media
+tv.kodi.Kodi
+org.videolan.VLC
+
+# Games
+org.prismlauncher.PrismLauncher
+com.valvesoftware.Steam
+
+# Utilities
+org.mozilla.firefox
+org.libreoffice.LibreOffice

@@ -1,0 +1,17 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Test Bootstrap Script",
+            "type": "shell",
+            "command": "bash scripts/test-bootstrap-locally.sh",
+            "problemMatcher": []
+        },
+        {
+            "label": "Verify Storage Layout",
+            "type": "shell",
+            "command": "bash scripts/verify-storage.sh",
+            "problemMatcher": []
+        }
+    ]
+}

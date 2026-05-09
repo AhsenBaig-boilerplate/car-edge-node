@@ -1,0 +1,23 @@
+[Interface]
+# Car edge node private key
+PrivateKey = <GENERATE_WITH_wg_genkey>
+Address = 10.100.0.2/24
+DNS = 10.100.0.1
+
+[Peer]
+# Homelab WireGuard server public key
+PublicKey = <HOMELAB_PUBLIC_KEY>
+Endpoint = <HOMELAB_PUBLIC_IP>:51820
+AllowedIPs = 10.100.0.0/24, 192.168.1.0/24
+PersistentKeepalive = 25
+
+# Instructions:
+# 1. Generate keys on car node:
+#    wg genkey | tee privatekey | wg pubkey > publickey
+# 2. Copy private key to PrivateKey above
+# 3. Configure homelab WireGuard server with car node's public key
+# 4. Copy homelab's public key to PublicKey above
+# 5. Set homelab's public IP/domain to Endpoint
+# 6. Copy this file to /etc/wireguard/wg0.conf
+# 7. Backup to /mnt/storage/config/wireguard/wg0.conf
+# 8. Enable: sudo systemctl enable wg-quick@wg0

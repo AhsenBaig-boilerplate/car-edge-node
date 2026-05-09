@@ -1,0 +1,44 @@
+{
+    "comment": "Syncthing Configuration Template",
+    "instructions": [
+        "1. Install Syncthing: flatpak install flathub me.kozec.syncthingtk",
+        "2. Start Syncthing and access web UI at http://localhost:8384",
+        "3. Configure folders to sync:",
+        "   - /mnt/storage/media -> Homelab media folder",
+        "   - /mnt/storage/context -> Homelab context/documents",
+        "   - /mnt/storage/backups -> Homelab backup folder",
+        "4. Add your homelab device by Device ID",
+        "5. Enable ignore patterns for:",
+        "   - .sync-conflict-*",
+        "   - .stfolder",
+        "   - *.tmp",
+        "6. Save config and restart Syncthing",
+        "7. Backup final config to /mnt/storage/config/syncthing/"
+    ],
+    "folders": {
+        "media": {
+            "path": "/mnt/storage/media",
+            "label": "Media",
+            "type": "receiveonly",
+            "devices": [
+                "homelab"
+            ]
+        },
+        "context": {
+            "path": "/mnt/storage/context",
+            "label": "Context",
+            "type": "sendreceive",
+            "devices": [
+                "homelab"
+            ]
+        },
+        "minecraft-saves": {
+            "path": "/mnt/storage/minecraft/saves",
+            "label": "Minecraft Saves",
+            "type": "sendreceive",
+            "devices": [
+                "homelab"
+            ]
+        }
+    }
+}
