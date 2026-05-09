@@ -1,5 +1,20 @@
 # Partition Layout
 
+## ⚠️ Critical Concept: OS vs Storage Separation
+
+This system uses **partition separation** to protect your data:
+
+- **OS Partition**: Disposable, can be wiped and reinstalled anytime
+- **Storage Partition**: Persistent, contains ALL your valuable data
+
+**When the OS gets corrupted:**
+- Wipe and reinstall OS partition → **No data loss**
+- Storage partition remains untouched → **All media/games/saves preserved**
+
+This is the foundation of the zero-worry restore strategy.
+
+---
+
 ## Recommended Layout
 
 ### Option 1: Single Drive
@@ -20,6 +35,18 @@ Drive 1 (NVMe/SSD):
 Drive 2 (HDD/SSD):
 /dev/sdb1       <all>   Storage Partition (/mnt/storage)
 ```
+
+## ⚠️ Installation Warning
+
+**When installing ChimeraOS:**
+- Only select the OS partition for installation
+- If using dual-drive setup, only select the OS drive
+- **DO NOT** select or format the storage partition/drive
+- The ChimeraOS installer should NOT touch your storage
+
+If you accidentally select the wrong partition, **ALL DATA WILL BE LOST**.
+
+---
 
 ## Partitioning Commands
 

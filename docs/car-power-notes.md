@@ -19,8 +19,20 @@
 
 ### Filesystem Safety
 - Immutable OS reduces corruption risk
+- **Separate OS and storage partitions protect data**
 - Storage partition with journaling (ext4/btrfs)
 - Regular sync-to-disk to prevent data loss
+- Even if OS corrupts from power loss, **storage remains intact**
+
+### Data Preservation Strategy
+- **OS corruption** from sudden power loss → **No data loss**
+  - Reinstall OS partition (15 minutes)
+  - Storage partition untouched
+  - All media/games/saves preserved
+- **Storage corruption** from sudden power loss → **Extremely rare**
+  - Journaling filesystem (ext4) protects metadata
+  - At worst: minor file corruption, not partition loss
+  - Regular Syncthing sync to homelab provides backup
 
 ### Power Loss Testing
 - Simulate sudden power loss during:
